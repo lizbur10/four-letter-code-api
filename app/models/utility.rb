@@ -1,7 +1,8 @@
 class Utility < ApplicationRecord
     # https://stackoverflow.com/questions/4410794/ruby-on-rails-import-data-from-a-csv-file
     # https://stackoverflow.com/questions/41314784/getting-unknownattributeerror-in-rake-using-csv-attribute-exists-in-rails-app
-    # Use Number to export to CSV
+    # Cleaned up spreadsheets to get rid of headers, blank lines, etc. then used Numbers app 
+    # to export original spreadsheet to CSV - otherwise get `CSV::MalformedCSVError`
 
     # Ebird API link for possible future reference: https://documenter.getpostman.com/view/664302/S1ENwy59?version=latest#intro
 
