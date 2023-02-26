@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: four_letter_code_api_production
-  username: four_letter_code_api
-  password: <%= ENV["FOUR_LETTER_CODE_API_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
