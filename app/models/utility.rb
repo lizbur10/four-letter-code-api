@@ -3,13 +3,16 @@ require 'csv'
 class Utility < ApplicationRecord
     # https://stackoverflow.com/questions/4410794/ruby-on-rails-import-data-from-a-csv-file
     # https://stackoverflow.com/questions/41314784/getting-unknownattributeerror-in-rake-using-csv-attribute-exists-in-rails-app
-    # Cleaned up spreadsheets to get rid of headers, blank lines, etc. then used Numbers app 
-    # to export original spreadsheet to CSV - otherwise get `CSV::MalformedCSVError`
+
+    # Cleaned up spreadsheets to get rid of headers, blank lines, etc., then exported as CSV 
 
     # Ebird API link for possible future reference: https://documenter.getpostman.com/view/664302/S1ENwy59?version=latest#intro
 
-    # Downloaded ABA checklist spreadsheet from this page: https://www.aba.org/aba-checklist/ (12/19 version)
+    # Downloaded ABA checklist spreadsheet from this page: https://www.aba.org/aba-checklist/ (8/22 version)
     # Added BRWA, GCBT, LAWA, MYWA, SCJU, TRFL, WPWA, YPWA, YSFL by hand
+
+    # # Downloaded eBird taxonomy spreadsheet (v2022) from this page: https://www.birds.cornell.edu/clementschecklist/download/?__hstc=60209138.6f747e6e23a2f1b7014cf372ca892894.1544132358313.1566237656917.1566240564794.714&__hssc=60209138.3.1566240564794&__hsfp=2467889448
+    # # NOTE: added a blank column at the front so file would be read properly
 
     ### MOVED CODE BELOW TO seeds.rb 
     # def self.read_aba_csv
@@ -21,7 +24,7 @@ class Utility < ApplicationRecord
     #     end
     # end
 
-    # # Downloaded eBird taxonomy spreadsheet (v2019) from this page: https://www.birds.cornell.edu/clementschecklist/download/?__hstc=60209138.6f747e6e23a2f1b7014cf372ca892894.1544132358313.1566237656917.1566240564794.714&__hssc=60209138.3.1566240564794&__hsfp=2467889448
+
     # def self.read_ebird_csv
     #     filename = File.join(Rails.root, 'app', 'csv', 'eBird_Taxonomy_v2022.csv')
     #     CSV.foreach(filename, headers: true) do |row|
