@@ -5,7 +5,7 @@ require 'csv'
 ## See models/utility.rb for documentation on these files
 
 aba_filename = File.join(Rails.root, 'app', 'csv', 'ABA_Checklist-8.11b.csv')
-ebird_filename = File.join(Rails.root, 'app', 'csv', 'eBird_Taxonomy_v2022.csv')
+ebird_filename = File.join(Rails.root, 'app', 'csv', 'ebird_taxonomy_v2022.csv')
 
 # Step 1
 CSV.foreach(aba_filename, headers: true) do |row|
