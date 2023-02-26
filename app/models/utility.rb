@@ -24,7 +24,7 @@ class Utility < ApplicationRecord
         filename = File.join(Rails.root, 'app', 'csv', 'eBird_Taxonomy_v2022.csv')
         CSV.foreach(filename, headers: true) do |row|
             if found_bird = Bird.all.find_by(sci_name: row["sci_name"]) || Bird.all.find_by(common_name: row["primary_com_name"]) 
-                found_bird.taxon_order = row["taxon_order"]
+                found_bird.taxon_order = row["taxon_order"].to_i
                 found_bird.ebird_species_code = row["species_code"]
                 found_bird.save
 
